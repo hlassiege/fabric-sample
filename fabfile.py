@@ -17,3 +17,9 @@ def system():
     run('ulimit -n 64000')
     run('ulimit -l unlimited')
 
+
+@task
+@parallel
+def init_envs():
+    execute(system)
+    execute(java.install)
